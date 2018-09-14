@@ -121,6 +121,26 @@ function Exibir() {
             success: function (data) {
               info = data.response.photos.items[0];
               foto = info.prefix + '250x200' + info.suffix;
+            },
+            // Caso nao consiga carregar a imagem, mostra cartao sem imagem
+            error: function () {
+              content = '<div class="card" style="width: 14rem;">' +
+                '<div class="card-body"><h5 class="card-title">' + nome + '</h5>' +
+                '<p class="card-text">' + end1 + '</p><p class="card-text">' +
+                end2 + '</p>' + '<a href="' + link +
+                '" class="btn btn-primary">Mais informações</a></div></div>';
+              marcador.setAnimation(google.maps.Animation.BOUNCE);
+              setTimeout(function () {
+                marcador.setAnimation(null);
+              }, 1420);
+              infowindow.marker = marcador;
+              infowindow.setContent(content);
+              infowindow.open(mapa, marcador);
+              mapa.setZoom(16);
+              mapa.panTo(marcador.position);
+              infowindow.addListener('closeclick', function () {
+                infowindow.setMarker = null;
+              });
             }
           }).done(function () {
             // Mostra cartao com informacoes
