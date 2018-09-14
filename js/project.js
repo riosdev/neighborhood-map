@@ -75,7 +75,6 @@ function Exibir() {
     marker.addListener('click', function () {
       mostrarInformacoes(this, largeInfowindow);
     });
-
     // alterna navegação lateral
     self.aberto = ko.observable(false);
     self.abrir = function () {
@@ -85,7 +84,6 @@ function Exibir() {
     bounds.extend(marker.position);
     mapa.fitBounds(bounds);
   });
-
   // Funcao que acessa a API do Foursquare
   function mostrarInformacoes(marcador, infowindow) {
     // Verifica se as informacoes deste marcador ja estao expostas
@@ -145,7 +143,6 @@ function Exibir() {
               infowindow.setMarker = null;
             });
           });
-
         },
         // Mostra mensagem de erro caso haja falha no ajax
         error: function () {
