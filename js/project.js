@@ -164,7 +164,7 @@ function Exibir() {
     }
   }
 
-  self.listViewClick = function (li) {
+  self.itemClick = function (li) {
     // Clicar no titulo e no marcador tem a mesma funcao
     if (li.nome) {
       mapa.setZoom(16);
