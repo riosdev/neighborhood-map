@@ -1,0 +1,27 @@
+#navi {
+	position: absolute;
+	top: 10px;
+	left: 270px;
+	z-index: 5;
+	cursor: pointer;
+	transition: 1.0s;
+}
+
+#navegacao_lateral {
+	height: 100%;
+	transition: 0.5s;
+}
+
+#inner_nav_lat {
+	width: 250px;
+}
+
+#mapa {
+	bottom: 0px;
+	height: 100%;
+	left: 0px;
+	margin-left: 250px;
+	position: absolute;
+	right: -250px;
+	transition: 1.0s;
+}
