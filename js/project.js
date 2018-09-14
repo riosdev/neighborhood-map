@@ -53,7 +53,7 @@ var pontosDeInteresse = [{
 function Exibir() {
   // inicializa variaveis
   var self = this;
-  var largeInfowindow = new google.maps.InfoWindow();
+  var iw = new google.maps.InfoWindow();
   self.markers = [];
   var content = "Inicializando... aguarde.";
   var client_id = "502N4UPQF3JMNCFYJHN2X03F0XH2NHTY4DBLQHTH3G53LH14";
@@ -73,7 +73,7 @@ function Exibir() {
     this.markers.push(marker);
     // mostra informações ao clicar no marcador
     marker.addListener('click', function () {
-      mostrarInformacoes(this, largeInfowindow);
+      mostrarInformacoes(this, iw);
     });
     // alterna navegação lateral
     self.aberto = ko.observable(false);
@@ -173,7 +173,7 @@ function Exibir() {
       setTimeout(function () {
         li.marker.setAnimation(null);
       }, 1420);
-      mostrarInformacoes(li.marker, largeInfowindow);
+      mostrarInformacoes(li.marker, iw);
       if (screen.width < 500) {
         document.getElementById("navi").style.left = "20px";
         document.getElementById("mapa").style.marginLeft = "0px";
