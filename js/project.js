@@ -122,13 +122,15 @@ function Exibir() {
               info = data.response.photos.items[0];
               foto = info.prefix + '250x200' + info.suffix;
             },
-            // Caso nao consiga carregar a imagem, mostra cartao sem imagem
+            // Caso nao consiga carregar a imagem, mostra imagem alt
             error: function () {
+              foto = 'img/no_photo.jpg'
               content = '<div class="card" style="width: 14rem;">' +
-                '<div class="card-body"><h5 class="card-title">' + nome + '</h5>' +
-                '<p class="card-text">' + end1 + '</p><p class="card-text">' +
-                end2 + '</p>' + '<a href="' + link +
-                '" class="btn btn-primary">Mais informações</a></div></div>';
+              '<img class="card-img-top" src="' + foto + '" alt="foto do local">' +
+              '<div class="card-body"><h5 class="card-title">' + nome + '</h5>' +
+              '<p class="card-text">' + end1 + '</p><p class="card-text">' +
+              end2 + '</p>' + '<a href="' + link +
+              '" class="btn btn-primary">Mais informações</a></div></div>';
               marcador.setAnimation(google.maps.Animation.BOUNCE);
               setTimeout(function () {
                 marcador.setAnimation(null);
